@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            border: 2px solid red;
+            display: flex;
+            flex-flow: row wrap;/*行的形式存在 不换行*/
+        }
+        .main div{
+            height: 50px;
+            margin: 5px;
+            width: 50px;
+            /*flex-basis: auto;!*  auto是剩余的空间，不变，不过必须有width *!*/
+            border: 2px solid red;
+            flex:100%;/*只要是百分比就是  flex-basis  不是百分比就是 其他剩下的两个*/
+            /*!*上下两者想等*!*/
+            /*flex-basis: 100%;!*假如有 flex-basis这个 width 是没有用的*!*/
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="center"></div>
+    <div class="left"></div>
+</div>
+</body>
+</html>

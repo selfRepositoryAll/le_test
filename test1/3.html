@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            padding: 30px;
+        }
+
+        .main, .aside {
+            padding: 30px;
+            height: 100px;
+        }
+
+        .header {
+            background: darkgoldenrod;
+        }
+
+        .footer {
+            background: darkseagreen;
+        }
+
+        .main {
+            background: red;
+        }
+
+        .aside-1 {
+            background: darkgrey;
+        }
+
+        .aside-2 {
+            background: darkmagenta;
+        }
+
+        .wrap { /*现在是对容器的*/
+            border: 2px solid red;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap; /* wrap是不换行的意思 所有的都集中在一起*/
+        }
+
+        /*现在所有的项目中的没有大小 现在弄宽度*/
+        .wrap p {
+            /*flex 放大 缩小 剩余空间的部分*/
+            flex: 1 100%;
+            /*flex-basis: 100%;!**!*/
+        }
+        /* 属性的改变 现在讲aside的width 弄回来*/
+        .wrap .aside{
+            flex: 1 auto ;/*因为flex-basis:auto 所以就 属性叠加最后的一个就会实现 auto 好像是关键*/
+        }
+        .wrap .main{
+            flex: 20%;
+        }
+    </style>
+</head>
+<body>
+<div class='wrap'>
+    <p class="header">header</p>
+    <p class="aside aside-1">second</p>
+    <p class="main">first</p>
+    <p class="aside aside-2">third</p>
+    <p class="footer">footer</p>
+</div>
+</body>
+</html>

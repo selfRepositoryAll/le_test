@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="button">button</button>
+</body>
+</html>
+<script>
+    document.getElementById('button').onclick=function (e) {
+        console.log(e.target.tagName.toLowerCase())
+        console.log(e.target.id)
+    }
+   // e.srcElement// 利用冒泡传播的机制 给最外层的 div增加点击事件  然后判断事件源是谁就可以了进
+</script>

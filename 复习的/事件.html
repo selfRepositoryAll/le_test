@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <style>
+        #p{
+            height: 100px;
+            width: 100px;
+            margin-bottom: 1000px;
+            background: darkgray;
+        }
+    </style>
+</head>
+<body>
+<p id="p"></p>
+<button id="button">button</button>
+</body>
+</html>
+<script>
+ /*   document.getElementById('p').onmousemove=function (e) {
+        console.log('xxx')
+        console.log(e.clientX)
+        console.log(e.clientY)
+        console.log(e.pageY)
+    }*/
+    document.getElementById('p').onmouseover=function () {
+        console.log('进去就执行一次')
+    }
+    document.getElementById('p').onmouseout=function () {
+        console.log('xx')
+    }
+    document.onclick=function (e) {
+        e=e||window.event;
+       console.log('e.type',e.type);
+       console.log(e.clientX)
+        console.log(e.clientY)
+        console.log(document.body.scrollTop)
+        console.log('document.body.scrollTop+e.clientY',document.body.scrollTop+e.clientY)
+        console.log(e.pageX)
+        console.log(e.pageY)// ie下没有这个 需要通过计算 scrollTop+e.clent
+    }
+</script>

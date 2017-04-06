@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="button">
+<input type="checkbox">
+<input type="checkbox">
+<input type="email">
+<input type="date">
+</body>
+</html>
+<script>
+//    ~function () {
+//        var inputs=document.getElementsByTagName('input')
+//     //   console.log([...inputs])
+//           return [...inputs].filter((item)=>{
+//            return item.type !='checkbox'
+//
+//    }()
+
+    var getCheckbox=()=>{
+        var inputs=document.getElementsByTagName('input')
+        return [...inputs].filter((item)=>{
+            return item.type =='checkbox'
+        })
+    }
+    console.log(getCheckbox())
+
+
+
+</script>

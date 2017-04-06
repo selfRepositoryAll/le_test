@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="memberID" onkeypress="xxx()">
+</body>
+</html>
+<script type="text/javascript">
+    function xxx() {
+        var a = document.getElementById("memberID");
+        if (a.value.length > 0)
+            if ((a.value.length + 1) % 5 == 0 && a.value.length > 0)
+                a.value += " ";
+    }
+</script>

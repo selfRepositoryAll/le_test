@@ -1,0 +1,8 @@
+
+
+1.如何水平垂直居中一个div中的img？根据给出的html，写css** ``` <div id="container"> <a id="wrapper"> < img id="pic" src="..."> </a > </div> ``` **
+2.写一个函数获取页面中所有的checkbox。** <br><br> **
+3.编写一个函数将列表子元素顺序反转。** ``` <ul id="target"> <li>1</li> <li>2</li> <li>3</li> <li>4</li> </ul> ``` **
+4.阅读以下代码片段，输出bar和foo，结果是什么？** ```
+var foo = {n: 1}; var bar = foo; foo.x = foo = {n: 2}; ``` **
+5.用JS写一个函数，实现向一个输入框输入字符，每输入4个字符自动插入一个空格。**

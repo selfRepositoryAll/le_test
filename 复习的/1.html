@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*  html,body{
+              width: 100%;
+              height: 100%;
+              overflow-x: hidden;
+          }*/
+        .box1 {
+            /*width: 100%;*/
+            width: 200px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+
+        .box2 {
+            margin-left: 210px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<button id="button">button</button>
+</body>
+</html>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    /* document.getElementById('button').onclick(()=>{
+     console.log('xxx')
+     })*/
+    var btn = document.getElementById('button');
+
+    btn.addEventListener('click',()=>{
+        console.log('xxxxx')
+        var xhr=new XMLHttpRequest()
+        xhr.open('get','data',true);//true是异步的 false 是同步的所以肯定还是以同步为主
+        xhr.onreadystatechange=()=>{
+            if(xhr.readyState==4&&/^2\d{2}$/.test(xhr.status)){
+             //   console.log(xhr.responseText)
+                console.dir('xhr',xhr)
+            }
+        }
+        xhr.send()
+    })
+    var xhr=new XMLHttpRequest()
+    xhr.open('get','data',true);
+    xhr.onreadystatechange=()=>{
+        if(xhr.readyState==4&&/^2\d{2}$/.test(xhr.status)){
+            //   console.log(xhr.responseText)
+            console.dir('xhr',xhr)
+        }
+    }
+    xhr.send()
+    console.log(xhr)
+
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="checkbox">
+<div>xx</div>
+<input type="button">
+<input type="checkbox">
+</body>
+</html>
+<script>
+    var getCheckBox=function () {
+        var checkbok=document.getElementsByTagName('input');
+        return Array.from(checkbok).filter((item)=>{
+            return item.type!='checkbox'
+        })
+    };
+   console.log(getCheckBox())
+
+
+
+
+</script>

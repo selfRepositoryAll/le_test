@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</body>
+</html>
+<script>
+    const checkCount = () => {
+        const inputs = document.querySelectorAll('input')
+        return Array.from(inputs).filter((item) => {
+            return item.type == 'checkbox'
+        })
+    }
+    console.log(checkCount())
+
+</script>

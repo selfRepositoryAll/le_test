@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+对于事件而言 this指向  在标准是 是元素本身，但是在ie下是window
+    可以重复添加 已经顺序问题
+</pre>
+</body>
+</html>
+<script>
+    document.addEventListener('click',function () {
+        console.log('x')
+    },false) // 这里false是在冒泡过程中执行 true是在捕获阶段执行 xhr 中 true 是同步的意思 false 是异步意思
+    var fn2=function () {
+        console.log('xxx')
+    }
+    // 这边还不能放匿名函数 因为 栈的地址是不一样的
+    document.addEventListener('click',fn2,false)
+    setTimeout(()=>{
+        document.removeEventListener('click',fn2,false)
+    },1000)
+    // ie下就需要使用 detachEvent
+    document.body.attachEvent('onclick',function () {
+        console.log('xxx')
+    })
+</script>

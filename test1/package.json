@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "version": "1.0.0",
+    "name": "Demo",
+    "createUser": "",
+    "created": "",
+    "openLimit": 0,
+    "updated": "",
+    "publish": "",
+    "description": null,
+    "background": "",
+    "cover": "",
+    "pageCount": 0,
+    "dataCount": 0,
+    "showCount": 0,
+    "turnType": "move",
+    "music": {
+      "url": "http://g3.letv.cn/vod/v1/MjE2LzQ1LzMxL2Nsb3VkLXdlYi8wL2xjMDZfMjAxNzAyMjAvNzY2NzUxODIzL3R0dHQubXAz?b=1234&np=1",
+      "name": "tttt.mp3"
+    },
+    "share": {
+      "title": "",
+      "desc": "",
+      "imgUrl": ""
+    }
+  },
+  "pages": [
+    {
+      "rightPageId": "",
+      "bottomPageId": "",
+      "name": "未命名",
+      "viewport": {
+        "fontSize": 14,
+        "width": 320,
+        "height": 506
+      },
+      "background": {
+        "output": "",
+        "input": {
+          "image": "",
+          "size": "",
+          "position": "",
+          "color": ""
+        }
+      },
+      "elements": [],
+      "leftPageId": "",
+      "topPageId": "",
+      "id": "pkhGsDd",
+      "effect": {
+        "name": "none"
+      },
+      "turnIcon": "no"
+    }
+  ]
+}
+

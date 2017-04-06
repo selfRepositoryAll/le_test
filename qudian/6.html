@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="addSpace" onkeyup="addSpace()">
+</body>
+</html>
+<script>
+    function addSpace() {
+        var content=document.getElementById('addSpace').value;
+        if(content.length==4){
+            content+=' '
+        }
+        var ary=content.split(' ');
+        var lastI=ary[ary.length-1]
+        console.log(lastI)
+        lastI<=4
+        console.log(ary)
+    }
+</script>
+<script>
+    var str='1234 5678 '
+
+
+
+</script>

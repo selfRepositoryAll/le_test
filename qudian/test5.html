@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="numberId" onkeypress="xxx()">
+<pre>
+    5.用JS写一个函数，实现向一个输入框输入字符，每输入4个字符自动插入一个空格。**
+    onkeypress 回退根本不会触发 函数 只有输入的时候才会触发
+</pre>
+</body>
+</html>
+<script>
+
+    function xxx() {
+        var a = document.getElementById('numberId');
+       // console.log(value)
+        if (a.value.length > 0) {
+            console.log('a.value',a.value)//是之前的值不是现在的值
+            if ((a.value.length + 1) % 5 == 0) {
+                a.value += ' '
+            }
+        }
+    }
+//    function xxx() {
+//        var a = document.getElementById("numberId");
+//        if (a.value.length > 0)
+//            if ((a.value.length + 1) % 5 == 0 && a.value.length > 0)
+//                a.value += " ";
+//    }
+
+
+</script>

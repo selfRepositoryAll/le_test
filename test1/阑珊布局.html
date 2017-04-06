@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            border: 2px solid red;
+            display: flex;
+            width: 100%;
+        }
+        .main div{
+            height: 50px;
+            /*flex:1 100%;*/
+        }
+        .left{
+            background: darkseagreen;
+        }
+        .center{
+            background: darkgrey;
+        }
+        .left{
+            /* 这个位置有宽度就会写死*/
+            width: 70px;
+            /*flex: 1 auto;*/
+        }
+        .center{
+            /* 中间的部分是不能写死的*/
+            /* 剩余多少空间给其他的项目*/
+            flex: 60%;
+        }
+    </style>
+</head>
+<body>
+<pre>就两行代码 一个是 display:flex  一个项目的flex-basis 剩余给空间的内容</pre>
+<div class="main">
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="left"></div>
+</div>
+</body>
+</html>

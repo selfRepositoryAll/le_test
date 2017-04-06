@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>能不能销毁其实就看这个作用域的的返回值有没有被其他占用</pre>
+<pre>http://www.cnblogs.com/qinmengjiao123-123/p/5219424.html</pre>
+<pre>重点:作用域不销毁，放在属性上就可以 不会产生作用域</pre>
+<pre>对象的话 最后也让他等于 null 就可以了</pre>
+</body>
+</html>
+<script>
+    function a(){
+        var i=1;
+        function b(){
+            ++i;
+            return i;
+        }
+        return b;
+    }
+    var c=a();
+    alert(c());
+    // 到这里 b是没有销毁的闭包 谨记 下面的操作可以促使 闭包销毁
+    c=null // 这样浏览器会看到c已经变成null 也就是这个栈没有被占用 就会垃圾回收 内存就收回了
+</script>
+<script>
+ /*   for(var i=0;i<=10;i++){
+
+        ~function (i) {
+            window.clearTimeout()
+            setTimeout(()=>{
+              console.log('i',i)
+            },i*1000)
+        }(i)
+    }*/
+// 上面这种方式 不会立即销毁 不过还是会自动销毁
+</script>
+<script>
+    var ary=[]
+    for(var i=0;i<10;i++){
+        ary.push(i)
+    }
+    ary.forEach((item)=>{
+        clearTimeout()
+        setTimeout(()=>{
+            console.log(item)
+        },1000*item)
+    })
+</script>
+<script>
+    var obj = {
+        func : (function(){
+            var n = 0;
+            return function(){
+                n ++;
+                return n;
+            }
+        })()
+    }
+    // 这是最好的销毁方式
+    function Class(){
+        var self = this;
+        self.n = 0;
+        self.func = function(){
+            self.n ++;
+            return self.n;
+        }
+    }
+    var obj = new Class();
+</script>

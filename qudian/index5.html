@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    5.用JS写一个函数，实现向一个输入框输入字符，每输入4个字符自动插入一个空格。**
+</pre>
+<input type="text" id="numberID" onkeypress="addSpace()">
+</body>
+</html>
+<script>
+
+    const addSpace=()=>{
+        var a=document.getElementById('numberID');
+        if(a.value.length>0){
+            if((a.value.length+1)%5==0&&a.value.length>0){
+                a.value+=' ';
+            }
+        }
+    }
+
+
+</script>

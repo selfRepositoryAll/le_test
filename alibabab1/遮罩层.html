@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #target {
+            width: 200px;
+            height: 300px;
+            margin: 40px;/*所有的margin*/
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+<div id="target"></div>
+<pre>
+    1: 定位的距离不包含 margin 是从左上角开始的 定位的left and top
+    2: offsetLeft是 有margin 的  width and height  ele的width 和height 和 margin opacity alpha
+</pre>
+</body>
+</html>
+<script>
+
+    function addMask(elem, opacity) {
+        opacity = opacity || 0.2;
+        var rect = elem.getBoundingClientRect();
+        var style = getComputedStyle(elem, null);// 原生的获取css的
+
+        var mask = document.createElement('div');
+        mask.style.position = 'absolute';
+        var marginLeft = parseFloat(style.marginLeft);
+        mask.style.left = (elem.offsetLeft - marginLeft) + 'px';
+        //console.log(elem.offsetLeft-marginLeft)
+        var marginTop = parseFloat(style.marginTop);
+        mask.style.top = (elem.offsetTop - marginTop) + 'px';
+      //  console.log(elem.offsetTop - marginTop)
+        mask.style.zIndex = 9999;
+        mask.style.opacity = '' + opacity;
+        mask.style.backgroundColor = '#000';
+    /*    console.log('style.marginLeft',style.marginLeft)
+        console.log('style.marginRight',style.marginRight)
+        console.log('rect.width',rect.width)*/
+        mask.style.width = (parseFloat(style.marginLeft) +
+            parseFloat(style.marginRight) + rect.width) + 'px';//这是元素的宽度
+        mask.style.height = (parseFloat(style.marginTop) +
+            parseFloat(style.marginBottom) + rect.height) + 'px';// 高度
+        elem.parentNode.appendChild(mask);
+    }
+    var target = document.getElementById('target');
+    addMask(target);
+    // node中req 是可读流
+    target.addEventListener('click', function () {
+        console.log('click');
+    }, false);
+</script>

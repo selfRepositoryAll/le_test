@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mian{
+            width: 700px;
+            height: 300px;
+            display: flex;
+            background: darkgray;
+        }
+        .center{
+            width: 100px;
+            height: 50px;
+            background: darkblue;
+            /*flex-basis: 200px;!*这个是代替了宽度*!*/
+            /*flex-basis: auto;!*就不会变了*!*/
+            flex-basis: 100%;/*占用父级的宽度*/
+            /* 假如有人占用父级的*/
+        }
+        .left{
+            width: 100px;
+            height: 50px;
+            background: darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+<div class="mian">
+    <div class="center"></div>
+    <div class="left"></div>
+</div>
+</body>
+</html>
