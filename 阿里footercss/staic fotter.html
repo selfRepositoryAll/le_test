@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 如果没有*/
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            border: 2px solid darkblue;
+            width: 100px;
+            min-height: 100%;/*不够一屏幕就显示一屏幕*/
+            /* Equal to height of footer */
+            /* But also accounting for potential margin-bottom of last child */
+            margin-bottom: -50px;
+            overflow-y: scroll;
+        }
+
+        .footer, .push {
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    http://www.cnblogs.com/wildorchid/p/5025626.html
+</pre>
+<div class="wrapper">
+    天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅膀天使的翅天
+    <div class="push">
+        push
+    </div>
+</div>
+<footer class="footer">footer</footer>
+</body>
+</html>

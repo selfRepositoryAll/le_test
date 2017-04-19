@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: darkgoldenrod;
+            float: left;
+            /*overflow: hidden;*/
+        }
+        #parent:after{
+            content:".";
+            height:0;
+            visibility:hidden;
+            display:block;
+            clear:both;
+        }
+
+        /* 利用 清除父级的浮动*/
+        .div2{
+            width: 100px;
+            height: 100px;
+            background: darkgrey;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div class="div1"></div>
+    <pre>两种方式吧</pre>
+    <!--<div class="clear"></div>-->
+</div>
+<div class="div2"></div>
+</body>
+</html>

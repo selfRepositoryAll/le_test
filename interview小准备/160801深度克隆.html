@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>深度克隆</title>
+</head>
+<body>
+
+<script>
+    function deepClone(obj){
+        var result,oClass=isClass(obj);
+        //确定result的类型
+        if(oClass==="Object"){
+            result={};
+        }else if(oClass==="Array"){
+            result=[];
+        }else{
+            return obj;
+        }
+        for(key in obj){
+            var copy=obj[key];
+            if(isClass(copy)=="Object"){
+                result[key]=arguments.callee(copy);//递归调用函数本身
+            }else if(isClass(copy)=="Array"){
+                result[key]=arguments.callee(copy);
+            }else{
+                result[key]=obj[key];
+            }
+        }
+        return result;
+    }
+
+    function isClass(o){
+        if(o===null) return "Null";
+        if(o===undefined) return "Undefined";
+        return Object.prototype.toString.call(o).slice(8,-1);
+    }
+    var oPerson={
+        oName:"rookiebob",
+        oAge:"18",
+        oAddress:{
+            province:"beijing"
+        },
+        ofavorite:[
+            "swimming",
+            {reading:"history book"}
+        ],
+        skill:function(){
+            console.log("bob is coding");
+        }
+    };
+
+
+    function clone(obj) {//rong版
+        var o;
+        switch (typeof obj) {
+            case 'undefined':
+                break;
+            case 'string':
+                o = obj + '';
+                break;
+            case 'number':
+                o = obj + 0;
+                break;
+            case 'boolean':
+                o = obj;
+                break;
+            case 'object':
+                if (obj === null) {
+                    o = null;
+                } else {
+                    if (Object.prototype.toString.call(obj) === '[object Array]') {
+                        o = [];
+                        for (var i = 0; i < obj.length; i++) {
+                            o.push(clone(obj[i]));
+                        }
+                    } else {
+                        o = {};
+                        for (var key in obj) {
+                            o[key] = clone(obj[key]);
+                        }
+                    }
+                }
+                break;
+            default:
+                o = obj;
+                break;
+        }
+        return o;
+    }
+</script>
+</body>
+</html>

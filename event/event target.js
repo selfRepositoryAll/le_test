@@ -3,7 +3,7 @@ function on(ele, type, fn) {
     if (addEventListener in window) {
         ele.addEventListener(type, fn, false)//这是在事件冒泡的阶段执行这个函数 true为异步
     } else {
-        if (!ele['Event' + type]) {
+        if (!ele['Event' + type]) {//如果不存在的话就 就成立 一个数组
             ele['Event' + type] = [];
             // 在ie下绑定的这个匿名函数 是无法移除的
             ele.attachEvent(`on${type}`, function () {
@@ -37,7 +37,7 @@ function off(ele, type, fn) {
 function run() {
     // 因为ie的问题 因为这run 执行在ie下面执行所以我们就不需要 在判断了
     var e = window.event //事件源 也是可以的
-    var type = e.type
+    var type = e.type;
     if (!e.target) {// ie下是 e.srcElement
         e.target = e.srcElement //
         e.pageX = '';// scrollTop clientHeight
@@ -52,7 +52,7 @@ function run() {
     var a = this['Event' + type]
     for (var i = 0; i < a.length; i++) {
         if (typeof a[i] !== 'function') {
-            a.splice(i, 1)
+            a.splice(i, 1);
             i--;
             continue
         }
@@ -107,7 +107,7 @@ const off=(ele,type,callback)=>{
 const run=()=>{
     //前两行代码是必须的 为什么呢google  是往浏览器传一个e 而ie是放在window。event
     var e=window.event
-    var type=e.type;// 获取到事件源 了  自然会拿到 事件类型
+    var type=e.type;// 获取到事件源 了  自然会拿到 事件类型  通过事件类型就可以在运行的时候 获取到函数 让我们来执行
     var a=this['Event'+type]
     if(a){
         for(var i=0;i<a.length;i++){
